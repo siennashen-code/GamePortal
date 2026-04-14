@@ -17,13 +17,14 @@ public class GamePortal {
         HashMap<String, Integer> gameCounts = new HashMap<String, Integer>();
         // writes highscores
         File f = new File("Highscore.csv");
+        
         while (true) {
             loadGames();
             
             System.out.println("~~~~Welcome to the game lobby! Which game would you like to play?~~~~");
             printGameChoices();
             Game g = getGameChoice();
-            System.out.println("You're playing " + g.getGameName());
+            System.out.println("...You're playing " + g.getGameName() + "...");
 
             g.play();
             
@@ -48,7 +49,6 @@ public class GamePortal {
         games.clear();
         games.add(new BlackjackGame());
         games.add(new NumberGuessGame());
-        // games.add(new Quiz());
     }
 
     public static void printGameChoices() {
@@ -58,9 +58,7 @@ public class GamePortal {
         }
     }
 
-    /*
-     * Takes in user input for printing out all games in
-     */
+
     public static Game getGameChoice() {
         int choice = ErrorCheck.getInt(sc);
         // for it to be numbered, we can't use hashmaps.

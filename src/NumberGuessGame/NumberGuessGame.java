@@ -1,13 +1,8 @@
 package NumberGuessGame;
 
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.Scanner;
-
 import Game.GameWriteable;
 
 public class NumberGuessGame extends GameFunctions implements GameWriteable {
-
 
     public String getGameName(){
         return "Number Guessing Game";
@@ -28,9 +23,5 @@ public class NumberGuessGame extends GameFunctions implements GameWriteable {
         return Integer.valueOf(score) < Integer.valueOf(currentHighScore);
         }
     }
-
-
-    
-
 
 }
