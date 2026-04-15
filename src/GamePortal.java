@@ -8,6 +8,7 @@ import Game.ErrorCheck;
 
 import Blackjack.BlackjackGame;
 import NumberGuessGame.NumberGuessGame;
+import BuzzfeedQuiz.Quiz;
 
 
 public class GamePortal {
@@ -49,6 +50,7 @@ public class GamePortal {
         games.clear();
         games.add(new BlackjackGame());
         games.add(new NumberGuessGame());
+        games.add(new Quiz());
     }
 
     public static void printGameChoices() {
