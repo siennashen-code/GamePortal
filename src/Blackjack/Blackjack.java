@@ -27,7 +27,7 @@ public class Blackjack extends CardGame {
     static PImage backgroundImg;
 
     boolean roundOver = false;
-    boolean gameOver = true;
+    boolean gameOver = false;
 
     int page = 0; // Which page on the interface you are on
 
@@ -159,6 +159,7 @@ public class Blackjack extends CardGame {
                 gameActive = true;
             } else if (endButton.isClicked(mouseX, mouseY)) { // End game button
                 page = 3;
+                gameOver = true;
             }
 
         } else if (page == 3) {
@@ -171,7 +172,7 @@ public class Blackjack extends CardGame {
                 roundOver = false;
                 playerOneTurn = true;
                 gameActive = true;
-                gameOver = true;
+                gameOver = false;
             }
         }
     }

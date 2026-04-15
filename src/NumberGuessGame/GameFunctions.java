@@ -10,7 +10,6 @@ public class GameFunctions { //A collection of methods for the Number Guessing G
     ArrayList<Integer> previous_guesses = new ArrayList<>();
     
     void game(){
-        System.out.println("---WELCOME TO THE NUMBER GUESSING GAME---");
         System.out.println("Let's set the range of numbers I can choose.");
         System.out.println("What's the lowest number: ");
         int low = getLowerBound();
