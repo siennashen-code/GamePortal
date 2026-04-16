@@ -15,19 +15,20 @@ public class GamePortal {
     static Scanner sc = new Scanner(System.in);
     static ArrayList<Game> games = new ArrayList<Game>();
     public static void main(String[] args) {
-        HashMap<String, Integer> gameCounts = new HashMap<String, Integer>();
         // writes highscores
         File f = new File("Highscore.csv");
-        
-        while (true) {
+        Boolean playing = true;
+        while (playing) {
             loadGames();
             
             System.out.println("~~~~Welcome to the game lobby! Which game would you like to play?~~~~");
             printGameChoices();
             Game g = getGameChoice();
-            System.out.println("...You're playing " + g.getGameName() + "...");
+            System.out.println("...You're playing " + g.getGameName() + "...\n");
 
             g.play();
+
+            g.writeHighScore(f);
             
             try {
                 Thread.sleep(1000);
@@ -35,14 +36,10 @@ public class GamePortal {
                 e.printStackTrace();
             }
 
-            g.writeHighScore(f);
-            // add one to game counts the hashmap, if you wanted to store some stats.
-            String gameKey = g.getGameName();
-            if (gameCounts.containsKey(gameKey)) {
-                gameCounts.put(gameKey, gameCounts.get(gameKey) + 1);
-            } else {
-                gameCounts.put(gameKey, 1);
+            for (int i = 0; i < 3; i++) {
+            System.out.println(".");
             }
+
         }
     }
 

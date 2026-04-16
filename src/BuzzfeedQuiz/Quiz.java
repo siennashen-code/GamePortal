@@ -273,7 +273,7 @@ public class Quiz implements GameWriteable {
         }
 
         public boolean isHighScore(String score, String currentHighScore) {
-                return false;
+                return false; //return false because nothing should be written in Highscore.csv for the quiz
         }
 
 }

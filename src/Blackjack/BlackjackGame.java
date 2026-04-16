@@ -180,14 +180,14 @@ public class BlackjackGame extends PApplet implements GameWriteable  {
     }
 
     public String getScore(){
-        return String.valueOf(cardGame.playerMoney);
+        return String.valueOf(cardGame.playerMoney) + " dollars";
     } // get a score - if there is no "score" you can return return "N/A" or something.
 
     public boolean isHighScore(String score, String currentHighScore){
         if (currentHighScore == null){
             return true;
         } else{
-        return Integer.valueOf(score) > Integer.valueOf(currentHighScore);
+        return Integer.valueOf(score.replace(" dollars", "")) > Integer.valueOf(currentHighScore.replace(" dollars", ""));
         }
     }
 

@@ -13,10 +13,8 @@ public class GameFunctions { //A collection of methods for the Number Guessing G
         System.out.println("Let's set the range of numbers I can choose.");
         System.out.println("What's the lowest number: ");
         int low = getLowerBound();
-        System.out.println(low);
         System.out.println("What's the highest number: ");
         int up = getUpperBound(low);
-        System.out.println(up);
 
         guesses = 0;
         Random rand = new Random();
@@ -68,11 +66,10 @@ public class GameFunctions { //A collection of methods for the Number Guessing G
             System.out.println(">>> My number is lower! Try again");
             gamePlay(low, up);
         } else {
-            System.out.println("---DONE  PLAYING---");
             if (guesses == 1){
-                System.out.println("You got it! You did that in 1 guess!");
+                System.out.println("\nYou guessed my number of " + numToGuess + "! You did that in 1 guess!");
             } else {
-                System.out.println("You got it! You did that in " + guesses + " guesses!");
+                System.out.println("\nYou guessed my number of " + numToGuess + " in " + guesses + " guesses!");
             }
             
         }

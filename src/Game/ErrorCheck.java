@@ -8,7 +8,7 @@ public class ErrorCheck {
         if (sc.hasNextInt()) {
             return sc.nextInt();
         } else {
-            System.out.println("Integer please!");
+            System.out.println("Please select a whole number!");
             sc.next();
             return getInt(sc);
         }

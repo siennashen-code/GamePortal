@@ -25,8 +25,16 @@ public interface GameWriteable extends Game {
         String score = getScore();
         String highScore = getBestScore(f);
 
+        System.out.println("\n---Game Over---");
+        
+        if (score != null) {
+            System.out.println("Your score: " + score);
+        }
+
         if (isHighScore(score, highScore)) {
-            System.out.println("You got a new high score, which beats the previous high score of " + highScore);
+            if (highScore != null) {
+                System.out.println("You got a new high score, beating the previous one of " + highScore);
+            }
             try {
 
                 Scanner myReader = new Scanner(f);
@@ -39,6 +47,8 @@ public interface GameWriteable extends Game {
                         newFile += line + "\n";
                     }
                 }
+                myReader.close();
+
                 // replace the Game's line with the new high score
                 // puts it at the end of the file
                 newFile += getGameName() + "," + score + "\n";
@@ -49,10 +59,6 @@ public interface GameWriteable extends Game {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-
-        for (int i = 0; i < 3; i++) {
-            System.out.println();
         }
 
     }
