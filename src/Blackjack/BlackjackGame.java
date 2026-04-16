@@ -5,7 +5,7 @@ import Game.GameWriteable;
 import processing.core.PApplet;
 
 
-public class BlackjackGame extends PApplet implements GameWriteable  {
+public class BlackjackGame extends PApplet implements GameWriteable  { //Blackjack game class
     Blackjack cardGame = new Blackjack();
     CountDownLatch latch = new CountDownLatch(1);
     int timer = 0;
@@ -182,7 +182,7 @@ public class BlackjackGame extends PApplet implements GameWriteable  {
 
     public String getScore(){
         return String.valueOf(cardGame.playerMoney) + " dollars";
-    } // get a score - if there is no "score" you can return return "N/A" or something.
+    }
 
     public boolean isHighScore(String score, String currentHighScore){
         if (currentHighScore == null){

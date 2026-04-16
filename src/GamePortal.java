@@ -17,29 +17,31 @@ public class GamePortal {
     public static void main(String[] args) {
         // writes highscores
         File f = new File("Highscore.csv");
-        Boolean playing = true;
-        while (playing) {
+
+        while (true) {
             loadGames();
 
             System.out.println("~~~~Welcome to the game lobby! Which game would you like to play?~~~~");
             printGameChoices();
             Game g = getGameChoice();
 
-            if (!g.equals(games.get(games.size() - 1))) {
+            if (!g.getGameName().equals("VIEW HIGH SCORES")) {
                 g.play();
                 g.writeHighScore(f);
             } else {
-                g.play();
+                g.play(); // Don't run writeHighScore for the highscore page because it wouldn't make
+                          // sense to print "GAME OVER" as is done in the
+                          // writeHighScore method
             }
 
-            try {
+            try { // a little pause after game is finished 
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
-            for (int i = 0; i < 3; i++) {
-                System.out.println("");
+            for (int i = 0; i < 3; i++) { //a little space after game is finished 
+                System.out.println();
             }
 
         }
@@ -55,9 +57,10 @@ public class GamePortal {
 
     public static void printGameChoices() {
         int n = 1;
+        
         for (Game s : games) {
-            if(s.getGameName().equals("VIEW HIGH SCORES")){
-                System.out.println();
+            if (s.getGameName().equals("VIEW HIGH SCORES")) {
+                System.out.println(); //a linespace between games and highscore page
             }
             System.out.println("[" + (n++) + "]: " + s.getGameName());
         }

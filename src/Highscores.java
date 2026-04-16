@@ -9,7 +9,9 @@ import java.io.IOException;
 
 import BuzzfeedQuiz.Person;
 
-public class Highscores implements GameWriteable {
+public class Highscores implements GameWriteable { // Class for the high score display page. For easier implementation,
+                                                   // I made it implement GameWriteable so it could be considered a Game
+                                                   // type
     public String getGameName() {
         return "VIEW HIGH SCORES";
     }
@@ -17,11 +19,19 @@ public class Highscores implements GameWriteable {
     public void play() {
         System.out.println("\n---Highscores---");
 
+        File highscores = new File("Highscore.csv");
+        
+        if (highscores.length() == 0) { //If there are no high scores
+            System.out.println("No high scores yet!");
+            System.out.println("----------------");
+            return;
+        }
+
         BufferedReader reader;
         try {
             reader = new BufferedReader(new FileReader("Highscore.csv"));
-            try {
-                String line;
+            try { // read through each line in the csv and print it in terminal
+                String line; 
                 line = reader.readLine();
                 while (line != null) {
                     String[] row = line.split(",");
@@ -37,12 +47,13 @@ public class Highscores implements GameWriteable {
             e.printStackTrace();
         }
 
+        System.out.println("----------------");
+
     }
 
     public String getScore() {
         return null;
-    } // get a score - if there is no "score" you can return return "N/A" or
-      // something.
+    }
 
     public boolean isHighScore(String score, String currentHighScore) {
         return false;

@@ -1,18 +1,15 @@
-## Getting Started
+## Sienna's Game Portal
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Here is an explanation of the portal and its games: 
 
-## Folder Structure
+*Blackjack*
+This is a single-player Blackjack game. For each round that you win, you gain $5, and for each round you lose, you lose $5. The game ends when you click the "End Game" button and your final score is the balance you are left with. 
 
-The workspace contains two folders by default, where:
+*Number Guessing Game*
+This is a simple number-guessing game where you try to guess the number the computer has selected. You do so by inputing numbers. Each time, the comptuer will tell you if their number is lower or higher. You can also set the range for the computer's selected number. Your final score is the number of guesses it took you to identify the number.  
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+*Buzzfeed Quiz*
+This is a multiple-choice personality quiz which helps you find a new friend using a csv file of previous quiz-takers and their responses. Once you finish the quiz, your responses will also be recorded in this csv. 
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+*Highscore Page*
+This page shows you the current high scores using the highscore.csv file. 

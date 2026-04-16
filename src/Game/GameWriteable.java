@@ -61,6 +61,8 @@ public interface GameWriteable extends Game {
             }
         }
 
+        System.out.println("----------------");
+
     }
 
     // get the best score for a specific game, from a file. returns null if no

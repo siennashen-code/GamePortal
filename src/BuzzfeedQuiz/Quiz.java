@@ -6,13 +6,12 @@ import java.util.ArrayList;
 
 // To read in and manipulate profile.csv
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Quiz implements GameWriteable {
+public class Quiz implements GameWriteable { // Quiz game class
         static Scanner sc = new Scanner(System.in);
         static ArrayList<Person> others = new ArrayList<Person>();
         static Person user;
