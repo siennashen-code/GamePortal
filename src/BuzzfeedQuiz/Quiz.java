@@ -147,7 +147,7 @@ public class Quiz implements GameWriteable {
         }
 
         public static void game_intro() {
-                System.out.println("-------* PLAN A WINTER VACATION AND FIND YOUR BEST FRIEND *-------");
+                System.out.println("\n-------* PLAN A WINTER VACATION AND FIND YOUR BEST FRIEND *-------");
                 System.out.println(
                                 "        Plan your dream vacation, and we will pair you with a schoolmate who also took this quiz.");
                 System.out.println("\nReady to begin? Press '1' to start");

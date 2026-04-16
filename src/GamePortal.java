@@ -10,26 +10,28 @@ import Blackjack.BlackjackGame;
 import NumberGuessGame.NumberGuessGame;
 import BuzzfeedQuiz.Quiz;
 
-
 public class GamePortal {
     static Scanner sc = new Scanner(System.in);
     static ArrayList<Game> games = new ArrayList<Game>();
+
     public static void main(String[] args) {
         // writes highscores
         File f = new File("Highscore.csv");
         Boolean playing = true;
         while (playing) {
             loadGames();
-            
+
             System.out.println("~~~~Welcome to the game lobby! Which game would you like to play?~~~~");
             printGameChoices();
             Game g = getGameChoice();
-            System.out.println("...You're playing " + g.getGameName() + "...\n");
 
-            g.play();
+            if (!g.equals(games.get(games.size() - 1))) {
+                g.play();
+                g.writeHighScore(f);
+            } else {
+                g.play();
+            }
 
-            g.writeHighScore(f);
-            
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -37,7 +39,7 @@ public class GamePortal {
             }
 
             for (int i = 0; i < 3; i++) {
-            System.out.println(".");
+                System.out.println("");
             }
 
         }
@@ -48,15 +50,18 @@ public class GamePortal {
         games.add(new BlackjackGame());
         games.add(new NumberGuessGame());
         games.add(new Quiz());
+        games.add(new Highscores());
     }
 
     public static void printGameChoices() {
         int n = 1;
         for (Game s : games) {
+            if(s.getGameName().equals("VIEW HIGH SCORES")){
+                System.out.println();
+            }
             System.out.println("[" + (n++) + "]: " + s.getGameName());
         }
     }
-
 
     public static Game getGameChoice() {
         int choice = ErrorCheck.getInt(sc);

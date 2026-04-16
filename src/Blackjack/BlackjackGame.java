@@ -11,6 +11,7 @@ public class BlackjackGame extends PApplet implements GameWriteable  {
     int timer = 0;
 
     public void play() {
+        System.out.println("\n---Blackjack---");
         PApplet.runSketch(new String[] {"Blackjack.GameFunctions"}, this);
 
         try {
