@@ -1,5 +1,4 @@
 ## Sienna's Game Portal
-
 Here is an explanation of the portal and its games: 
 
 *Blackjack*
@@ -10,6 +9,10 @@ This is a simple number-guessing game where you try to guess the number the comp
 
 *Buzzfeed Quiz*
 This is a multiple-choice personality quiz which helps you find a new friend using a csv file of previous quiz-takers and their responses. Once you finish the quiz, your responses will also be recorded in this csv. 
+
+*ASCII Art*
+You can choose between ghosts or DNA ascii art by entering in 1 or 2, respectively. The scroll art will run for 5 seconds and then terminates. 
+
 
 *Highscore Page*
 This page shows you the current high scores using the highscore.csv file. 

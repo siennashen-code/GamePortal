@@ -9,6 +9,7 @@ import Game.ErrorCheck;
 import Blackjack.BlackjackGame;
 import NumberGuessGame.NumberGuessGame;
 import BuzzfeedQuiz.Quiz;
+import ASCII.AsciiGame;
 
 public class GamePortal {
     static Scanner sc = new Scanner(System.in);
@@ -52,6 +53,8 @@ public class GamePortal {
         games.add(new BlackjackGame());
         games.add(new NumberGuessGame());
         games.add(new Quiz());
+        games.add(new AsciiGame());
+
         games.add(new Highscores());
     }
 
